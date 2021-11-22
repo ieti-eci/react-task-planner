@@ -24,7 +24,8 @@ export const TaskList = () => {
     const newTask = {
       isCompleted: false,
       name: name,
-    };
+    }; 
+    setTextValue("");
     setData((prev) => ({ ...prev, tasks: [...tasks, newTask] }));
   };
 

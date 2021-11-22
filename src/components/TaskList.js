@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useData } from "../providers/DataProvider";
 import { TaskItem } from "./TaskItem";
+import '../ListTasks.css'; 
 
 export const TaskList = () => {
   const { data, setData } = useData();
@@ -48,7 +49,7 @@ export const TaskList = () => {
           type="text"
           placeholder="Task name"
         />
-        <button>Create Task</button>
+        <button class="button button1">Create Task</button>
       </form>
 
       <ul>

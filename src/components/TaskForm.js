@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useHistory, useParams } from "react-router";
 import { useData } from "../providers/DataProvider";
+import '../EditTask.css'; 
 
 export const TaskForm = () => {
   const history = useHistory();
@@ -28,7 +29,8 @@ export const TaskForm = () => {
     setText(inputName);
   };
 
-  const handleSave = () => {
+  const handleSave = (event) => { 
+    event.preventDefault();
     const newTasks = data.tasks.map((task) => {
       if (task.id === taskId) {
         return { ...task, name: text };
@@ -38,12 +40,12 @@ export const TaskForm = () => {
     });
 
     setData((prev) => ({ ...prev, tasks: newTasks }));
-
+    
     history.goBack();
   };
 
   return (
-    <form>
+    <form onSubmit={handleSave}>
       <input
         type="text"
         placeholder="Task Name"
@@ -51,10 +53,7 @@ export const TaskForm = () => {
         onChange={handleChange}
       />
       <input type="checkbox" onChange={onTaskChange} checked={isCompleted} />
-
-      <button type="button" onClick={handleSave}>
-        Save
-      </button>
+      <input type="submit" value="Save"/> 
     </form>
   );
 };

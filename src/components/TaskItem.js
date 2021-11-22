@@ -1,4 +1,5 @@
-import { useHistory } from "react-router";
+import { useHistory } from "react-router"; 
+import '../ListTasks.css'; 
 
 export const TaskItem = ({ id, isChecked, taskName, onTaskChange }) => {
   const history = useHistory();
@@ -16,7 +17,7 @@ export const TaskItem = ({ id, isChecked, taskName, onTaskChange }) => {
     <li>
       <input onChange={onTaskChange} checked={isChecked} type="checkbox" />
       <span style={styleOfTheComponent}>{taskName}</span>
-      <button onClick={handleClick}>edit</button>
+      <button class="button button1" onClick={handleClick}>edit</button>
     </li>
   );
 };

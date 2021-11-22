@@ -9,10 +9,18 @@ export const TaskForm = () => {
   const task = data.tasks.find((task) => task.id === taskId);
 
   const [text, setText] = useState(task?.name ?? "");
+  const [isCompleted, setIsCompleted] = useState(task.isCompleted);
+
 
   if (!task) {
     return <div>Task not found</div>;
   }
+
+  const onTaskChange = () => { 
+    task.isCompleted=!task.isCompleted;
+    setIsCompleted(task.isCompleted);
+
+  }; 
 
   const handleChange = (e) => {
     const inputName = e.target.value;
@@ -42,7 +50,7 @@ export const TaskForm = () => {
         value={text}
         onChange={handleChange}
       />
-      <input type="checkbox" checked={task.isCompleted} />
+      <input type="checkbox" onChange={onTaskChange} checked={isCompleted} />
 
       <button type="button" onClick={handleSave}>
         Save

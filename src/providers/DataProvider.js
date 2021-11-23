@@ -3,23 +3,36 @@ import React, { useState } from "react";
 export const tasks = [
   {
     id: "1",
-    isCompleted: false,
-    name: "Arreglar el checklist del edit",
+    isCompleted: "TODO",
+    name:"Reparar",
+    description: "Arreglar el checklist del edit", 
+    dueDate: "2022-03-31",  
+    assigned:"David Coronado",
   },
   {
     id: "2",
-    isCompleted: false,
-    name: "Limpiar el campo del create task cuando se crea tarea",
+    isCompleted: "TODO", 
+    name: "Limpiar Campo",
+    description: "Limpiar el campo del create task cuando se crea tarea", 
+    dueDate: "2022-03-31",  
+    assigned:"David Coronado",
+    
   },
   {
     id: "3",
-    isCompleted: false,
-    name: "Mejorar el UI usando CSS",
+    isCompleted: "TODO", 
+    name:"Mejora UI",
+    description: "Mejorar el UI usando CSS", 
+    dueDate: "2022-03-31",  
+    assigned:"David Coronado",
   },
   {
     id: "4",
-    isCompleted: false,
-    name: "Modificar la estructura del proyecto(UI y lógica) para que el Task tenga los siguientes campos: [name, description,assignedTo, dueDate, [status(TODO, IN_PROGRESS,REVIEW, DONE)]",
+    isCompleted: "TODO", 
+    name: "Modificar Estructura",
+    description: "Modificar la estructura del proyecto(UI y lógica) para que el Task tenga los siguientes campos: [name, description,assignedTo, dueDate, [status(TODO, IN_PROGRESS,REVIEW, DONE)]", 
+    dueDate: "2022-03-31",  
+    assigned:"David Coronado",
   }
 ];
 
